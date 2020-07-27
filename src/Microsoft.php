@@ -69,24 +69,3 @@ class Microsoft extends OAuth2
   {
     $request->addHeaders(['Authorization' => sprintf("Bearer %s", $accessToken->getToken())]);
   }
-
-  /**
-   * @inheritdoc
-   */
-  public function getEmail()
-  {
-		return isset($this->getUserAttributes()['email'])
-			? $this->getUserAttributes()['email']
-			: null;
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function getUsername()
-  {
-		return isset($this->getUserAttributes()['username'])
-			? $this->getUserAttributes()['username']
-			: null;
-  }
-}
