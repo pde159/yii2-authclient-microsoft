@@ -61,11 +61,4 @@ class Microsoft extends OAuth2
 	{
 		return $this->api('me', 'GET');
 	}
-
-  /**
-   * @inheritdoc
-   */
-  public function applyAccessTokenToRequest($request, $accessToken)
-  {
-    $request->addHeaders(['Authorization' => sprintf("Bearer %s", $accessToken->getToken())]);
-  }
+}
