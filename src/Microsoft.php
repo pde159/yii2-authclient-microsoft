@@ -1,13 +1,11 @@
 <?php
 namespace pde159\authclient;
 
-/**
- * Microsoft allows authentication via Microsoft Graph API.
- *
- * @author Pierre DEPREY
- */
-
-class Microsoft extends \yii\authclient\OAuth2
+use Yii;
+use yii\authclient\OAuth2;
+use pde159\authclient\widgets\MicrosoftStyleAsset;
+ 
+class Microsoft extends OAuth2
 {
     
     /**
@@ -30,14 +28,16 @@ class Microsoft extends \yii\authclient\OAuth2
     {
         parent::init();
         if ($this->scope === null) {
-            $this->scope = implode(',', [
+            $this->scope = implode(' ',[
                 "offline_access",
                 "openid", 
                 "https://graph.microsoft.com/mail.read",
             ]);
         }
+        $view = Yii::$app->getView();
+        MicrosoftStyleAsset::register($view);
     }
-    
+
     /**
      * @inheritdoc
      */

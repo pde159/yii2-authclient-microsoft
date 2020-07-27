@@ -19,6 +19,12 @@ or add to "require" section to composer.json
 
 ## Usage
 
+First create you Application via Microsoft Azure Portal and configure :
+
+- a redirect URI
+- a secret key
+- set to `all tenant` for multitenant availability
+
 And add the Oauth2 client to your Yii2 configuration `component` section
 
 ```php
@@ -27,9 +33,10 @@ And add the Oauth2 client to your Yii2 configuration `component` section
         'class'   => \yii\authclient\Collection::className(),
         'clients' => [
             'microsoft' => [
-                'class'             => 'pde159\authclient\Microsoft',
-                'clientId'        => 'testclient',
-                'clientSecret'    => 'testpass',
+                'class'         => 'pde159\authclient\Microsoft',
+                'returnUrl'     => 'http://localhost/user/login',
+                'clientId'      => 'clientIDyoudefinedInAzurePortal',
+                'clientSecret'  => 'SecretyoucratedinAzurePortal',
             ],
             ...
         ],
