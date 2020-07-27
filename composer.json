@@ -1,0 +1,30 @@
+{
+    "name": "pde159/yii2-authclient-microsoft",
+    "description": "Microsoft 365/Azure auth provider",
+    "type": "library",
+    "keywords": [
+      "yii2",
+      "authclient",
+      "oauth2",
+      "microsoft",
+      "azure",
+      "365"
+    ],
+    "homepage": "https://github.com/pde159/yii2-authclient-microsoft",
+    "require": {
+      "yiisoft/yii2-authclient": ">=2.2.7"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+      {
+        "name": "Pierre DEPREY",
+        "email": "pdeprey@techride.fr"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "pde159\\authclient\\": "src/"
+      }
+    },
+    "minimum-stability": "stable"
+  }
